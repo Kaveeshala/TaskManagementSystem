@@ -12,10 +12,13 @@ const userValidators = [
 ];
 
 // Routes
-router.post("/api/users", userValidators, userController.createUser);
-router.get("/api/users", userController.getUsers);
-router.get("/api/users/:id", userController.getUser);
-router.put("/api/users/:id", userValidators, userController.updateUser);
-router.delete("/api/users/:id", userController.deleteUser);
+router.post("/users", userValidators, userController.createUser);
+router.get("/users", userController.getUsers);
+router.get("/users/:id", userController.getUser);
+router.put("/users/:id", userValidators, userController.updateUser);
+router.delete("/users/:id", userController.deleteUser);
+
+
+
 
 module.exports = router;
