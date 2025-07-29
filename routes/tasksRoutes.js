@@ -40,7 +40,7 @@ const createTaskValidators = [
     .custom((value) => {
       const dueDate = new Date(value);
       const today = new Date();
-      today.setHours(0, 0, 0, 0); // Reset time to start of day for fair comparison
+      today.setHours(0, 0, 0, 0); // Reset time to start of day 
       
       if (dueDate <= today) {
         throw new Error("Due date must be in the future");
@@ -55,7 +55,7 @@ const createTaskValidators = [
     .withMessage("User ID must be a positive integer"),
 ];
 
-// Validators for updating tasks (more flexible - fields can be optional)
+// Validators for updating tasks 
 const updateTaskValidators = [
   body("title")
     .optional()
@@ -107,7 +107,7 @@ const updateTaskValidators = [
     .withMessage("User ID must be a positive integer"),
 ];
 
-// Routes (WITHOUT /api prefix since it's already added in server.js)
+// Routes 
 router.get("/tasks", taskController.getTasks);
 router.get("/tasks/:id", taskController.getTask);
 router.post("/tasks", createTaskValidators, taskController.createTask);

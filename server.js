@@ -10,7 +10,7 @@ const app = express();
 const User = require("./models/User");
 const Task = require("./models/Task");
 
-// Middleware – always put BEFORE routes
+
 // app.use(cors());
 app.use(express.json());
 
